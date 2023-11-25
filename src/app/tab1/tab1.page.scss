@@ -1,0 +1,67 @@
+.story-list {
+  padding: 16px 0 8px;;
+  border-bottom: 1px solid var(--ion-color-light);
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+
+    -ms-overflow-style: none;
+ 
+    &::-webkit-scrollbar {
+        display: none;
+    }
+  .scroll-horizontal {
+    padding-left: 16px;
+  }
+.scroll-item {
+    display: inline-block;
+    margin-right: 10px;
+    /* Espacio entre elementos si deseas */
+
+  
+  .item-label {
+    font-size: 13px;
+    margin-top: 8px;
+  }
+}
+}
+
+.post-item {
+  margin-bottom: 16px;
+
+  .post-header {
+    padding: 8px;
+  }
+
+  .post-media {
+    font-size: 0;
+
+    img, video {
+      width: 100%;
+    }
+  }
+
+  .post-stats, .post-comments {
+    padding: 0 12px 8px;
+  }
+
+  .hash-tag {
+    text-decoration: none;
+    margin-right: 4px;
+  }
+
+  .post-comments {
+    line-height: 1.4;
+
+    .username {
+      font-weight: 700;
+      margin-right: 4px;
+    }
+
+   
+
+    ion-icon {
+      vertical-align: middle;
+    }
+  }
+}

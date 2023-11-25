@@ -1,0 +1,71 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="white">
+    <ion-title>&#64;nombre</ion-title><!--nombre del usuario con un arroba al principio-->
+
+    <ion-buttons slot="end">
+      
+      <ion-button color="dark">
+        <ion-icon (click)="logOut()" slot="icon-only" name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+  <ion-row class="profile-header ion-align-items-center">
+    <ion-col size="auto">
+      <ion-avatar  class="avatar-lg has-update has-status">
+        <!--IMAGEN DEL PERFIL, AVATAR-->
+        <img src="https://picsum.photos/id/237/200/300" alt="">
+        <ng-template #placeholder_avatar>
+          <div class="fallback">
+            <p>Foto de perfil</p>
+          </div>
+        </ng-template>
+     
+      </ion-avatar>
+    </ion-col>
+    <ion-col>
+      <ion-row class="profile-stats">
+        <ion-col>
+          <div class="stats-number">1,329</div>
+          <!--numero de posts -->
+          <div class="stats-label">Posts</div>
+        </ion-col>
+        <ion-col>
+          <div class="stats-number">9,329</div>
+          <div class="stats-label">Followers</div>
+        </ion-col>
+        <ion-col>
+          <div class="stats-number">5,329</div>
+          <div class="stats-label">Following</div>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+
+  <div class="ion-padding profile-info">
+    <strong>Nombre usuario</strong><!--Nombre de la persona-->
+
+    <div>
+      Informacion <a href="https://www.takethatdesign.com/100ions/" target="_blank" rel="noreferrer noopener"
+        class="hash-tag"><strong>#hash de ejemplo</strong></a>
+        <!--iNFO DE LA PERSONA-->
+    </div>
+    <div>
+      Homepage: <a href="https://www.takethatdesign.com" target="_blank" rel="noreferrer noopener"
+        class="hash-tag"><strong>www.link de ejmplo.com</strong></a>
+    </div>
+  </div>
+
+  <div class="post-grid">
+    <ion-row>
+      <ion-col size="4"  *ngFor="let i of [1,2,3,4,5,6,7,8]">
+        <ion-img class="ion-no-padding" [src]="'https://picsum.photos/300/300?random=' + i" alt="" ></ion-img>
+          
+      </ion-col>
+    </ion-row>
+  </div>
+
+
+ 
