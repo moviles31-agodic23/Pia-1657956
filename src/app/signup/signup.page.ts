@@ -50,7 +50,7 @@ export class SignupPage implements OnInit {
 
       if (user){
         loading.dismiss()
-        this.router.navigateByUrl['/login'];
+        this.router.navigate(['/tabs'])
       }else{
         console.log('valores incorrectos')
       }
@@ -60,6 +60,9 @@ export class SignupPage implements OnInit {
 
   }
 
+  async volverInicio() {
+    this.router.navigate(['/inicio'])
+  }
 
 
   async toLogIn() {

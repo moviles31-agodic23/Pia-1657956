@@ -1,0 +1,31 @@
+<ion-content [fullscreen]="true" class="fondo-negro">
+  <ion-fab slot="fixed" vertical="top" horizontal="start">
+  
+    <ion-fab-button (click)="volver()">
+      <ion-icon name="chevron-back-outline"></ion-icon>
+  
+    </ion-fab-button>
+  
+  </ion-fab>
+  <ion-grid class="texto">
+  
+    <ion-text class="ion-text-center">
+      <p class="InicioText">Crear una Playlist</p>
+    </ion-text>
+
+<div class="ion-padding">
+  <ion-text>
+    <p class="textoP">Nombre de la Playlist</p>
+  </ion-text>
+  <ion-item>
+    <ion-input [(ngModel)]="nombre" name="nombre" type="text"></ion-input>
+  </ion-item>
+</div>
+<ion-row style="height: 35px"></ion-row>
+<ion-grid class="ion-text-center">
+  <ion-button shape="round" class="Login" (click)="crearPlay()" >
+    Crear
+  </ion-button>
+</ion-grid>
+  </ion-grid>
+</ion-content>

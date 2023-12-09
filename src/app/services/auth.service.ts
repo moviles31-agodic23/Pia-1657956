@@ -10,6 +10,7 @@ export class AuthService {
   
   constructor(private auth:AngularFireAuth) { }  
 
+  imagenes: { nombre: string, imagenSrc: string }[] = [];
 
  
   // Iniciar sesión
@@ -36,6 +37,13 @@ export class AuthService {
   async getProfile(){
     return await this.auth.currentUser;
   }
-  
 
+
+  agregarImagen(nombre: string, imagenSrc: string) {
+    this.imagenes.push({ nombre, imagenSrc });
+  }
+
+  obtenerImagenes() {
+    return this.imagenes;
+  }
 }

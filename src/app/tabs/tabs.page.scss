@@ -1,7 +1,16 @@
+ion-tab-bar {
+    --background: #121212;
+   
+}
 
-.small-avatar {
-    width: 50px;
-    /* Ajusta el tamaño deseado */
-    height: 50px;
-    /* Ajusta el tamaño deseado */
+// Cambiar el color del texto de las pestañas activas
+ion-tab-button[aria-selected="true"] {
+    --color: #ffffff;
+    /* Cambia #FFFFFF por el color de texto de pestañas activas que desees */
+}
+
+// Cambiar el color del texto de las pestañas inactivas
+ion-tab-button[aria-selected="false"] {
+    --color: #ffffff;
+    /* Cambia #CCCCCC por el color de texto de pestañas inactivas que desees */
 }

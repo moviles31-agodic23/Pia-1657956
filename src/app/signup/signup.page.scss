@@ -1,5 +1,30 @@
+ .fondo-negro {
+     --background: #121212;
+     color: #fff;
+ }
+
 .input {
     font-size: 300;
+}
+.Login {
+    --background: #535353;
+    margin-top: 10px;
+    width: 82px;
+    height: 42px;
+
+}
+ion-text {
+    color: #fff;
+
+    .InicioText {
+
+        font-size: 16px;
+    }
+
+    .textoP {
+        font-size: 20px;
+
+    }
 }
 
 ion-item {
@@ -24,4 +49,9 @@ ion-item {
     }
 
 
+}
+
+
+ion-fab-button {
+    --background: black;
 }

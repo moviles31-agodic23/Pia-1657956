@@ -65,4 +65,8 @@ export class LoginPage  {
     this.router.navigate(['/signup'])
   }
 
+  async volverInicio() {
+    this.router.navigate(['/inicio'])
+  }
+
 }

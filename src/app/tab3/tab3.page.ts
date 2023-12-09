@@ -9,12 +9,12 @@ import { Router } from '@angular/router';
 })
 export class Tab3Page {
 
-
+  imagenes: { nombre: string, imagenSrc: string }[] = [];
   user:any
 
   constructor(
     public auth:AuthService,
-    public route: Router,
+    public router: Router,
 
 
   ) { 
@@ -22,37 +22,37 @@ export class Tab3Page {
 
   }
 
-async logOut(){
-this.auth.signOut().then(()=>{
-  this.route.navigateByUrl['/login'];
-  console.log("sign out");
-}).catch((error)=>{
-  console.log(error);
-
-})
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  async volver() {
+    this.router.navigate(['/tabs/tab3'])
+  }
+  async crearP() {
+    this.router.navigate(['/crear-play'])
+  }
+  ngOnInit() {
+    this.imagenes = this.auth.obtenerImagenes();
+  }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

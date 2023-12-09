@@ -1,71 +1,89 @@
-<ion-header class="ion-no-border">
-  <ion-toolbar color="white">
-    <ion-title>&#64;nombre</ion-title><!--nombre del usuario con un arroba al principio-->
+<ion-content class="fondo-negro">
+  <ion-fab slot="fixed" vertical="top" horizontal="start">
 
-    <ion-buttons slot="end">
-      
-      <ion-button color="dark">
-        <ion-icon (click)="logOut()" slot="icon-only" name="log-out-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
+    <ion-fab-button (click)="volver()">
+      <ion-icon name="chevron-back-outline"></ion-icon>
 
-<ion-content color="light">
-  <ion-row class="profile-header ion-align-items-center">
-    <ion-col size="auto">
-      <ion-avatar  class="avatar-lg has-update has-status">
-        <!--IMAGEN DEL PERFIL, AVATAR-->
-        <img src="https://picsum.photos/id/237/200/300" alt="">
-        <ng-template #placeholder_avatar>
-          <div class="fallback">
-            <p>Foto de perfil</p>
-          </div>
-        </ng-template>
-     
+    </ion-fab-button>
+
+  </ion-fab>
+
+  <ion-grid class="fondo-negro" [fixed]="true">
+    <ion-row style="height: 55px"></ion-row>
+    <ion-col size="12">
+      <ion-avatar class="avatar">
+        <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
       </ion-avatar>
+      <ion-text class="ion-text-center">
+        <p>Nombre de Usuario</p>
+      </ion-text>
+      <div class="ion-text-center">
+        <ion-button shape="round" size="small" class="botonF">
+          Cambiar Foto
+        </ion-button>
+      </div>
+
     </ion-col>
-    <ion-col>
-      <ion-row class="profile-stats">
+    <ion-row class="ion-align-items-center">
+      <ion-col>
+        <ion-text>
+          <div class="ion-text-center">3</div>
+        </ion-text>
+        <div class="ion-text-center">
+          <p class="textoPeque">Playlist</p>
+        </div>
+
+      </ion-col>
+      <ion-col>
+        <ion-text>
+          <div class="ion-text-center">58</div>
+        </ion-text>
+        <div class="ion-text-center">
+          <p class="textoPeque">Seguidores</p>
+        </div>
+
+      </ion-col>
+      <ion-col>
+        <ion-text>
+          <div class="ion-text-center">43</div>
+        </ion-text>
+        <div class="ion-text-center">
+          <p class="textoPeque">Siguiendo</p>
+        </div>
+
+      </ion-col>
+    </ion-row>
+    <ion-row style="height: 25px"></ion-row>
+    <ion-text>
+      <div class="fuente"> Playlist</div>
+    </ion-text>
+
+    <ion-col size="4">
+      <ion-row *ngFor="let i of [1,2]">
+        <ion-img [src]="'https://picsum.photos/300/300?random=' + i" style="width:15%" alt=""></ion-img>
         <ion-col>
-          <div class="stats-number">1,329</div>
-          <!--numero de posts -->
-          <div class="stats-label">Posts</div>
+          <div class="textoPlaylist"> PlayList {{i}}
+            <ion-row style="height: 10px"></ion-row>
+            <div class="textoPeque">0 Canciones </div>
+          </div>
         </ion-col>
+      </ion-row>
+
+      <ion-row *ngFor="let imagen of imagenes">
+        <ion-img [src]="imagen.imagenSrc" style="width:15%" alt=""></ion-img>
         <ion-col>
-          <div class="stats-number">9,329</div>
-          <div class="stats-label">Followers</div>
-        </ion-col>
-        <ion-col>
-          <div class="stats-number">5,329</div>
-          <div class="stats-label">Following</div>
+          <div class="textoPlaylist" > {{imagen.nombre}}
+            <ion-row style="height: 10px"></ion-row>
+            <div class="textoPeque">0 Canciones </div>
+          </div>
         </ion-col>
       </ion-row>
     </ion-col>
-  </ion-row>
 
-  <div class="ion-padding profile-info">
-    <strong>Nombre usuario</strong><!--Nombre de la persona-->
-
-    <div>
-      Informacion <a href="https://www.takethatdesign.com/100ions/" target="_blank" rel="noreferrer noopener"
-        class="hash-tag"><strong>#hash de ejemplo</strong></a>
-        <!--iNFO DE LA PERSONA-->
-    </div>
-    <div>
-      Homepage: <a href="https://www.takethatdesign.com" target="_blank" rel="noreferrer noopener"
-        class="hash-tag"><strong>www.link de ejmplo.com</strong></a>
-    </div>
-  </div>
-
-  <div class="post-grid">
-    <ion-row>
-      <ion-col size="4"  *ngFor="let i of [1,2,3,4,5,6,7,8]">
-        <ion-img class="ion-no-padding" [src]="'https://picsum.photos/300/300?random=' + i" alt="" ></ion-img>
-          
-      </ion-col>
-    </ion-row>
-  </div>
+    <div> <ion-button fill="clear" (click)="crearP()"> Crear Playlist <ion-icon
+          name="add-outline"></ion-icon></ion-button></div>
 
 
- 
+  </ion-grid>
+
+</ion-content>

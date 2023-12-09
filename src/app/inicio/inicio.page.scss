@@ -1,0 +1,47 @@
+.fondo-negro {
+    --background: #121212;
+    color: #fff;
+
+    img {
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    ion-button {
+        margin-top: 10px;
+
+    }
+
+    .InciarSecionB {
+        --background: #1ED760;
+
+        color: #000000;
+
+        margin-top: 10px;
+        width: 337px;
+        height: 49px;
+        font-size: 16px;
+    }
+
+    .RegistroB {
+        --background: #DADADA;
+
+        color: #000000;
+
+        margin-top: 10px;
+        width: 337px;
+        height: 49px;
+        font-size: 16px;
+
+    }
+
+    .texto-central {
+        font: cabin;
+        text-align: center;
+        margin-top: 10px;
+        font-weight: 700;
+        font-size: 28px;
+        color: #fff;
+    }
+}

@@ -1,53 +1,57 @@
+<ion-content [fullscreen]="true" class="fondo-negro">
 
-<ion-content [fullscreen]="true">
-  <div class="header">
-    <ion-title class="title">Login</ion-title>
-    <p class="subtitle">Inicia secion</p>
-  </div>
+  <ion-fab slot="fixed" vertical="top" horizontal="start">
 
+    <ion-fab-button (click)="volverInicio()">
+      <ion-icon name="chevron-back-outline"></ion-icon>
 
+    </ion-fab-button>
 
-  <form [formGroup]="loginform" novalidate>
-    <div class="ion-padding">
-  
-      <ion-item>
-        <ion-input formControlName="email" placeholder="Correo" class="input"></ion-input>
-        <ion-icon name="person-outline"></ion-icon>
-      </ion-item>
-      <div *ngIf="loginform.controls?.['email'].touched && loginform.controls['email'].invalid">
-        <ion-text *ngIf="errorControl.email.errors?.required">
-          Correo invalido
+  </ion-fab>
+
+  <ion-grid>
+
+    <ion-text class="ion-text-center">
+      <p class="InicioText">Iniciar Secion</p>
+    </ion-text>
+
+    <form [formGroup]="loginform" novalidate>
+      <div class="ion-padding">
+        <ion-text>
+          <p class="textoP">¿Cual es tu correo?</p>
         </ion-text>
-      </div>
-  
-      <ion-item>
-        <ion-input formControlName="password" placeholder="Contraseña"  type="password" ></ion-input>
-        <ion-icon name="lock-closed-outline"></ion-icon>
-      </ion-item>
-      <div *ngIf="loginform.controls?.['password'].touched && loginform.controls['password'].invalid">
-        <ion-text *ngIf="errorControl.password.errors?.required">
-          Contraseña invalida
+        <ion-item>
+          <ion-input formControlName="email" placeholder="Correo" class="input"></ion-input>
+          <ion-icon name="person-outline"></ion-icon>
+        </ion-item>
+        <div *ngIf="loginform.controls?.['email'].touched && loginform.controls['email'].invalid">
+          <ion-text *ngIf="errorControl.email.errors?.required">
+            Correo invalido
+          </ion-text>
+        </div>
+        <ion-text>
+          <p class="textoP">¿Cual es tu contraseña?</p>
         </ion-text>
+        <ion-item>
+          <ion-input formControlName="password" placeholder="Contraseña" type="password"></ion-input>
+          <ion-icon name="lock-closed-outline"></ion-icon>
+        </ion-item>
+        <div *ngIf="loginform.controls?.['password'].touched && loginform.controls['password'].invalid">
+          <ion-text *ngIf="errorControl.password.errors?.required">
+            Contraseña invalida
+          </ion-text>
+        </div>
       </div>
-  
-  
-  
-  
-    </div>
-  <div class="header">
-    <ion-button  (click)="toSignup()" fill="clear">
-  <p class="subtitle">Registrate</p>
-    </ion-button>
-  </div>
+      
+      <ion-grid class="ion-text-center">
+        <ion-button shape="round" class="Login" (click)="login()">
+          Next
+        </ion-button>
+      </ion-grid>
 
-    <ion-fab vertical="bottom" horizontal="end" style="margin-bottom: 30px;">
-    
-      <ion-fab-button (click)="login()">
-        <ion-icon name="arrow-forward-outline" ></ion-icon>
-      </ion-fab-button>
 
-    </ion-fab>
-    
-  
-  </form>
-</ion-content> 
+    </form>
+
+  </ion-grid>
+
+</ion-content>

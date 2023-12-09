@@ -3,7 +3,11 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { authguard } from './guards/authguard';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' }, // Redirecciona a 'login' al iniciar
+  { path: '', redirectTo: 'inicio', pathMatch: 'full' }, // Redirecciona a 'login' al iniciar
+  {
+    path: 'inicio',
+    loadChildren: () => import('./inicio/inicio.module').then(m => m.InicioPageModule)
+  },
 
   {
     path: 'login',
@@ -23,8 +27,12 @@ const routes: Routes = [
   {
     path: 'comment-modal',
     loadChildren: () => import('./comment-modal/comment-modal.module').then( m => m.CommentModalPageModule)
+  },
+  {
+    path: 'crear-play',
+    loadChildren: () => import('./crear-play/crear-play.module').then( m => m.CrearPlayPageModule)
   }
-
+ 
 ];
 @NgModule({
   imports: [

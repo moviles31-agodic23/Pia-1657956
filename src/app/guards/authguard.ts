@@ -11,7 +11,7 @@ export const authguard  = () => {
     if(localStorage.getItem('token')){
         return true
     }else{
-        router.navigateByUrl['/login'];
+        router.navigateByUrl['/inicio'];
         return false
     }
 }
